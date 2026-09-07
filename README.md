@@ -1,0 +1,85 @@
+# RTI Delhi + Maharashtra
+
+Reproducible sampling, RA assignments, and a tracking dashboard for filing
+RTI applications to Delhi and Maharashtra public authorities — one
+combined batch, sampled at 10% within each state. Sibling of
+[rti-telangana](https://github.com/priyadarshiamar/rti-telangana) and
+[rti-karnataka](https://github.com/priyadarshiamar/rti-karnataka), and
+like them an extension of the Tamil Nadu pipeline in
+[in-rolls/rti](https://github.com/in-rolls/rti).
+
+**Dashboard:** https://priyadarshiamar.github.io/rti-delhi-maharashtra/
+
+## The universe
+
+Delhi ([rtionline.delhi.gov.in](https://rtionline.delhi.gov.in)) and
+Maharashtra ([rtionline.maharashtra.gov.in](https://rtionline.maharashtra.gov.in))
+both run the central "RTI Online" software, whose public PIO-lookup page
+(`pio_app_details.php`) carries the complete Public Authority dropdown
+with no login, consent gate, or CAPTCHA. On 2026-09-07 we saved both
+pages raw (committed unmodified under `data/raw/portal_scrape_2026-09-07/`);
+`scripts/build_frame.py` parses the dropdowns into `data/frame_dl_mh.csv`
+and writes `data/frame_provenance.json`.
+
+- **Delhi: 223 public authorities** (the project's earlier
+  `state_department` classification had 221).
+- **Maharashtra: 328 public authorities** (the earlier file had 215 — the
+  portal has grown by more than half since that capture).
+- Office names are kept **portal-verbatim**; `portal_value_id` preserves
+  each dropdown option's value for provenance. District/block join from
+  the legacy file where matched (302 of 551).
+
+## The batch
+
+Batch `dm2026q3_01`, seed `20260908`: a **10% draw within each state** —
+22 Delhi + 33 Maharashtra = 55 assignments. The frame's SHA-256 is frozen
+in `out/dm2026q3_01/batch_meta.json`.
+
+Stratification is by department group (leading segment of the office
+name), proportional with a floor of 1 and cap of 15, small groups pooled
+into OTHER — separately within each state. Within the draw:
+
+- **Treatment (70/30 within each state):** Delhi 15 plain / 7
+  legal-salience; Maharashtra 23 plain / 10 legal-salience. The
+  legal-salience letter is byte-identical to the plain one except for the
+  pre-specified Section 7(1)/20 paragraph.
+- **RAs:** RA1–RA4 at 14/14/14/13, the round-robin continuing across
+  state × treatment cells so loads stay even.
+- **IDs:** `DL-001…DL-022` and `MH-001…MH-033`.
+
+Re-running `python3 scripts/sample.py` reproduces the batch byte-for-byte.
+A new wave means a new `batch_id` **and** a new seed.
+
+## What RAs do
+
+1. Open the dashboard, download your worklist
+   (`out/dm2026q3_01/worklists/`).
+2. File Delhi rows on rtionline.delhi.gov.in and Maharashtra rows on
+   rtionline.maharashtra.gov.in (₹10 fee, CAPTCHA at submission; the
+   portals are reachable only from India). Pick the row's `office_name`
+   in the Public Authority dropdown.
+3. Paste the letter matching the row's `treatment` from
+   `out/dm2026q3_01/templates/` (fill only the `[FILER ...]`
+   placeholders; filer details are private and never committed here).
+4. Record every attempt — including offices that could not be filed to.
+   The "could not file" rows preserve the denominator. Use RA codes, not
+   real names, in `filed_by`.
+
+## Repository layout
+
+```
+config/batch.yaml         frozen batch design
+data/raw/                 both portals' dropdown pages + legacy district file
+data/frame_dl_mh.csv      the combined 551-office frame (generated)
+data/frame_provenance.json how the frame was built
+scripts/build_frame.py    raw dropdown pages -> frame
+scripts/sample.py         the seeded two-state draw (stdlib only)
+out/dm2026q3_01/          assignments.csv, batch_meta.json, worklists/, templates/
+docs/                     the GitHub Pages dashboard (copies of the above)
+```
+
+## Privacy
+
+No filer names, addresses, emails, phone numbers, or evidence links are
+committed. Letters contain placeholders. Filing records with personal
+details live outside this repository.

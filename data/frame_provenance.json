@@ -1,0 +1,19 @@
+{
+  "scraped_on": "2026-09-07",
+  "built_on": "2026-09-07",
+  "sources": {
+    "Delhi": "https://rtionline.delhi.gov.in/pio_app_details.php",
+    "Maharashtra": "https://rtionline.maharashtra.gov.in/request/pio_app_details.php"
+  },
+  "unique_offices": {
+    "Delhi": 223,
+    "Maharashtra": 328
+  },
+  "district_block_joined_from_legacy_file": 302,
+  "frame_sha256": "b76983d6513011ef2addb3c2237fafa4d4df1d431b6d7a8cf556353ab4138dbf",
+  "notes": [
+    "names kept portal-verbatim after whitespace normalisation",
+    "pio_app_details.php serves the same MinistryId dropdown the request form uses, with no login, consent gate, or CAPTCHA",
+    "portal_value_id is the dropdown option value, kept for provenance"
+  ]
+}

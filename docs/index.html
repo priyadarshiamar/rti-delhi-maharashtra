@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RTI Delhi + Maharashtra batch · dm2026q3_01</title>
+  <style>
+    :root { color-scheme: light; --ink:#17202a; --muted:#5d6b78; --line:#dce3e8; --blue:#1261a0; --bg:#f5f7f9; --card:#fff; }
+    * { box-sizing: border-box; }
+    body { margin:0; color:var(--ink); background:var(--bg); font:15px/1.45 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    main { max-width:1500px; margin:0 auto; padding:28px 20px 60px; }
+    h1 { margin:0 0 4px; font-size:clamp(1.55rem,3vw,2.35rem); letter-spacing:-.025em; }
+    h2 { margin:0; font-size:1.05rem; }
+    p { margin:.35rem 0; }
+    a { color:var(--blue); }
+    .subtitle { color:var(--muted); margin-bottom:22px; }
+    .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(145px,1fr)); gap:10px; margin:20px 0; }
+    .card, .panel { background:var(--card); border:1px solid var(--line); border-radius:10px; box-shadow:0 1px 2px #15202b0b; }
+    .card { padding:14px 16px; }
+    .card strong { display:block; font-size:1.5rem; }
+    .card span { color:var(--muted); font-size:.82rem; }
+    .panel { padding:16px; margin-top:16px; }
+    .toolbar { display:flex; flex-wrap:wrap; gap:9px; align-items:end; }
+    label { display:grid; gap:4px; color:var(--muted); font-size:.8rem; font-weight:600; }
+    input, select, button { min-height:38px; border:1px solid #b8c5cf; border-radius:6px; background:#fff; color:var(--ink); padding:7px 10px; font:inherit; }
+    input { min-width:min(360px,80vw); }
+    button, .button { cursor:pointer; color:#fff; background:var(--blue); border-color:var(--blue); text-decoration:none; display:inline-flex; align-items:center; }
+    button.secondary, .button.secondary { background:#fff; color:var(--blue); }
+    .links { display:flex; flex-wrap:wrap; gap:8px; margin-top:13px; }
+    .status { color:var(--muted); margin:14px 0 8px; }
+    .table-wrap { overflow:auto; border:1px solid var(--line); border-radius:8px; }
+    table { width:100%; min-width:1050px; border-collapse:collapse; background:#fff; }
+    th, td { padding:9px 10px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; }
+    th { position:sticky; top:0; z-index:1; background:#eef3f7; font-size:.8rem; white-space:nowrap; }
+    td { font-size:.86rem; }
+    tr:last-child td { border-bottom:0; }
+    .pill { display:inline-block; border-radius:999px; padding:2px 8px; font-size:.76rem; white-space:nowrap; }
+    .legal { background:#fff0d8; color:#814b00; }
+    .plain { background:#e8f1fb; color:#164f7f; }
+    .ra { background:#e9f5ec; color:#1e6b34; }
+    .pager { display:flex; align-items:center; justify-content:space-between; gap:10px; margin-top:12px; }
+    .pager button:disabled { opacity:.45; cursor:not-allowed; }
+    .error { color:#a51d2d; background:#fff0f1; border:1px solid #e6aab0; padding:12px; border-radius:7px; }
+    code { background:#edf1f4; border-radius:4px; padding:1px 4px; }
+    ol { margin:.4rem 0 .4rem 1.2rem; padding:0; }
+    @media (max-width:650px) { main { padding:20px 12px 40px; } .panel { padding:12px; } input { min-width:100%; } .toolbar label:first-child { width:100%; } }
+  </style>
+</head>
+<body>
+<main>
+  <h1>RTI Delhi + Maharashtra batch</h1>
+  <p class="subtitle">Delhi + Maharashtra · batch <code>dm2026q3_01</code> · reproducible 10% draws: 22 of 223 Delhi and 33 of 328 Maharashtra portal-listed public authorities</p>
+
+  <section class="cards" aria-label="Batch summary">
+    <div class="card"><strong id="n">—</strong><span>assignments</span></div>
+    <div class="card"><strong id="dl">—</strong><span>Delhi</span></div>
+    <div class="card"><strong id="mh">—</strong><span>Maharashtra</span></div>
+    
+    <div class="card"><strong id="plain">—</strong><span>plain letters</span></div>
+    <div class="card"><strong id="legal">—</strong><span>legal-salience letters</span></div>
+    <div class="card"><strong id="ras">—</strong><span>research assistants</span></div>
+  </section>
+
+  <section class="panel">
+    <h2>RA instructions</h2>
+    <ol>
+      <li>Download your worklist below and work through it top to bottom.</li>
+      <li>File Delhi rows on <a href="https://rtionline.delhi.gov.in" rel="noopener">rtionline.delhi.gov.in</a> and Maharashtra rows on <a href="https://rtionline.maharashtra.gov.in" rel="noopener">rtionline.maharashtra.gov.in</a> (₹10 fee, CAPTCHA at submission; portals reachable only from India). Pick the office named in <code>office_name</code> from the Public Authority dropdown.</li>
+      <li>Paste the letter for your row's <code>treatment</code>: <em>plain</em> rows use the plain template, <em>legal_salience</em> rows use the legal-salience template. Do not edit the text beyond the filer placeholders.</li>
+      <li>Record every attempt in the filing form, <strong>including offices you could not file to</strong> (missing from the dropdown, portal error) — that row still counts.</li>
+    </ol>
+  </section>
+
+  <section class="panel">
+    <h2>Downloads</h2>
+    <div class="links">
+      <a class="button" href="data/assignments.csv" download>Master assignments CSV</a>
+      <a class="button secondary" href="data/batch_meta.json" download>Batch metadata</a>
+      <a class="button secondary" href="data/worklists/RA1.csv" download>RA1 worklist</a>
+      <a class="button secondary" href="data/worklists/RA2.csv" download>RA2 worklist</a>
+      <a class="button secondary" href="data/worklists/RA3.csv" download>RA3 worklist</a>
+      <a class="button secondary" href="data/worklists/RA4.csv" download>RA4 worklist</a>
+      <a class="button secondary" href="data/templates/plain_v3.txt" download>Plain letter (v3)</a>
+      <a class="button secondary" href="data/templates/legal_salience_v3.txt" download>Legal-salience letter (v3)</a>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="toolbar">
+      <label>Search offices, groups, districts, IDs
+        <input id="search" type="search" placeholder="e.g. Hospital, Nagpur, DL-004, MH-012">
+      </label>
+      <label>State
+        <select id="f-state"><option value="">All</option></select>
+      </label>
+      <label>RA
+        <select id="f-ra"><option value="">All</option></select>
+      </label>
+      <label>Treatment
+        <select id="f-treatment"><option value="">All</option></select>
+      </label>
+      <label>Department group
+        <select id="f-group"><option value="">All</option></select>
+      </label>
+      <label>District
+        <select id="f-district"><option value="">All</option></select>
+      </label>
+      <button class="secondary" id="reset" type="button">Reset</button>
+    </div>
+    <p class="status" id="status">Loading…</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr>
+          <th>ID</th><th>State</th><th>Office</th><th>Department group</th><th>District</th><th>Treatment</th><th>RA</th>
+        </tr></thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+    <div class="pager">
+      <button id="prev" type="button">← Previous</button>
+      <span id="page"></span>
+      <button id="next" type="button">Next →</button>
+    </div>
+  </section>
+
+  <p class="subtitle" style="margin-top:20px">
+    Seeded draw (seed frozen in <code>batch_meta.json</code>) from the portals' own Public Authority dropdowns (223 Delhi + 328 Maharashtra offices),
+    read 2026-09-07 from each portal's public PIO-lookup page.
+    Design mirrors the Tamil Nadu batch in <a href="https://github.com/in-rolls/rti">in-rolls/rti</a>.
+  </p>
+</main>
+<script>
+(function () {
+  "use strict";
+  var PAGE = 50, rows = [], view = [], page = 0;
+
+  function parseCSV(text) {
+    var out = [], row = [], cur = "", q = false, i, c;
+    for (i = 0; i < text.length; i++) {
+      c = text[i];
+      if (q) {
+        if (c === '"') { if (text[i+1] === '"') { cur += '"'; i++; } else q = false; }
+        else cur += c;
+      } else if (c === '"') q = true;
+      else if (c === ",") { row.push(cur); cur = ""; }
+      else if (c === "\n") { row.push(cur); out.push(row); row = []; cur = ""; }
+      else if (c !== "\r") cur += c;
+    }
+    if (cur.length || row.length) { row.push(cur); out.push(row); }
+    var head = out.shift();
+    return out.filter(function (r) { return r.length > 1; }).map(function (r) {
+      var o = {}; head.forEach(function (h, j) { o[h] = r[j] || ""; }); return o;
+    });
+  }
+
+  function uniq(key) {
+    var s = {}; rows.forEach(function (r) { s[r[key]] = 1; });
+    return Object.keys(s).sort();
+  }
+  function fillSelect(id, vals) {
+    var el = document.getElementById(id);
+    vals.forEach(function (v) {
+      var o = document.createElement("option"); o.value = v; o.textContent = v; el.appendChild(o);
+    });
+  }
+  function esc(s) { var d = document.createElement("div"); d.textContent = s; return d.innerHTML; }
+
+  function apply() {
+    var qy = document.getElementById("search").value.toLowerCase(),
+        st = document.getElementById("f-state").value,
+        ra = document.getElementById("f-ra").value,
+        tr = document.getElementById("f-treatment").value,
+        gp = document.getElementById("f-group").value,
+        di = document.getElementById("f-district").value;
+    view = rows.filter(function (r) {
+      if (st && r.state !== st) return false;
+      if (ra && r.assigned_ra !== ra) return false;
+      if (tr && r.treatment !== tr) return false;
+      if (gp && r.dept_group !== gp) return false;
+      if (di && r.district !== di) return false;
+      if (qy) {
+        var hay = (r.application_id + " " + r.office_name + " " + r.dept_group + " " + r.district).toLowerCase();
+        if (hay.indexOf(qy) === -1) return false;
+      }
+      return true;
+    });
+    page = 0; render();
+  }
+
+  function render() {
+    var tb = document.getElementById("tbody"), start = page * PAGE,
+        slice = view.slice(start, start + PAGE);
+    tb.innerHTML = slice.map(function (r) {
+      var pill = r.treatment === "legal_salience" ? "legal" : "plain";
+      return "<tr><td><code>" + esc(r.application_id) + "</code></td><td>" + esc(r.state) + "</td><td>" + esc(r.office_name) +
+        "</td><td>" + esc(r.dept_group) + "</td><td>" + esc(r.district) +
+        "</td><td><span class='pill " + pill + "'>" + esc(r.treatment) +
+        "</span></td><td><span class='pill ra'>" + esc(r.assigned_ra) + "</span></td></tr>";
+    }).join("");
+    document.getElementById("status").textContent = view.length + " of " + rows.length + " assignments";
+    var pages = Math.max(1, Math.ceil(view.length / PAGE));
+    document.getElementById("page").textContent = "Page " + (page + 1) + " / " + pages;
+    document.getElementById("prev").disabled = page === 0;
+    document.getElementById("next").disabled = page >= pages - 1;
+  }
+
+  fetch("data/assignments.csv").then(function (r) {
+    if (!r.ok) throw new Error("HTTP " + r.status);
+    return r.text();
+  }).then(function (text) {
+    rows = parseCSV(text);
+    document.getElementById("n").textContent = rows.length;
+    document.getElementById("dl").textContent = rows.filter(function (r) { return r.state === "Delhi"; }).length;
+    document.getElementById("mh").textContent = rows.filter(function (r) { return r.state === "Maharashtra"; }).length;
+    document.getElementById("plain").textContent = rows.filter(function (r) { return r.treatment === "plain"; }).length;
+    document.getElementById("legal").textContent = rows.filter(function (r) { return r.treatment === "legal_salience"; }).length;
+    document.getElementById("ras").textContent = uniq("assigned_ra").length;
+    fillSelect("f-state", uniq("state"));
+    fillSelect("f-ra", uniq("assigned_ra"));
+    fillSelect("f-treatment", uniq("treatment"));
+    fillSelect("f-group", uniq("dept_group"));
+    fillSelect("f-district", uniq("district"));
+    ["search","f-state","f-ra","f-treatment","f-group","f-district"].forEach(function (id) {
+      document.getElementById(id).addEventListener("input", apply);
+    });
+    document.getElementById("reset").addEventListener("click", function () {
+      ["search","f-state","f-ra","f-treatment","f-group","f-district"].forEach(function (id) {
+        document.getElementById(id).value = "";
+      });
+      apply();
+    });
+    document.getElementById("prev").addEventListener("click", function () { page--; render(); });
+    document.getElementById("next").addEventListener("click", function () { page++; render(); });
+    apply();
+  }).catch(function (e) {
+    document.getElementById("status").innerHTML =
+      "<span class='error'>Could not load data/assignments.csv (" + esc(e.message) + ").</span>";
+  });
+})();
+</script>
+</body>
+</html>
