@@ -29,7 +29,14 @@
   "frame_rows": 551,
   "source": "portal scrape 2026-09-07 via scripts/build_frame.py (see data/frame_provenance.json)",
   "templates": {
-    "plain": "plain_v3.txt",
-    "legal_salience": "legal_salience_v3.txt"
+    "Delhi": {
+      "plain": "plain_v3.txt",
+      "legal_salience": "legal_salience_v3.txt"
+    },
+    "Maharashtra": {
+      "plain": "plain_v4_mh150.txt",
+      "legal_salience": "legal_salience_v4_mh150.txt",
+      "note": "portal caps request text at 150 words"
+    }
   }
 }

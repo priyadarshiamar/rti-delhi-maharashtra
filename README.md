@@ -40,9 +40,18 @@ name), proportional with a floor of 1 and cap of 15, small groups pooled
 into OTHER — separately within each state. Within the draw:
 
 - **Treatment (70/30 within each state):** Delhi 15 plain / 7
-  legal-salience; Maharashtra 23 plain / 10 legal-salience. The
-  legal-salience letter is byte-identical to the plain one except for the
-  pre-specified Section 7(1)/20 paragraph.
+  legal-salience; Maharashtra 23 plain / 10 legal-salience. In each
+  instrument pair the legal-salience letter is the plain one plus a single
+  pre-specified Section 7(1)/20 paragraph, nothing else changed.
+- **Instruments:** Delhi files the shared v3 letters. Maharashtra's portal
+  caps the request text at **150 words**, so its rows carry
+  `template_version: v4_mh150` — condensed letters (plain 123 words,
+  legal-salience 149) that keep every load-bearing element (register
+  extract with all recorded fields, period-totals fallback, s.25 return,
+  no-new-compilation language, personal-details disclaimer, s.2(j)(iv)/7(9)
+  electronic supply, s.6(3) transfer) and drop only the indicative
+  category lists and the Format A/B/C labelling. Cross-state comparisons
+  of the salience effect should note the instrument-version difference.
 - **RAs:** RA1–RA4 at 14/14/14/13, the round-robin continuing across
   state × treatment cells so loads stay even.
 - **IDs:** `DL-001…DL-022` and `MH-001…MH-033`.

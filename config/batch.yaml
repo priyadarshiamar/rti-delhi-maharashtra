@@ -24,8 +24,12 @@ research_assistants:
   - RA4
 
 templates:
-  plain: out/dm2026q3_01/templates/plain_v3.txt
-  legal_salience: out/dm2026q3_01/templates/legal_salience_v3.txt
+  Delhi:
+    plain: out/dm2026q3_01/templates/plain_v3.txt
+    legal_salience: out/dm2026q3_01/templates/legal_salience_v3.txt
+  Maharashtra:   # portal caps request text at 150 words
+    plain: out/dm2026q3_01/templates/plain_v4_mh150.txt
+    legal_salience: out/dm2026q3_01/templates/legal_salience_v4_mh150.txt
 
 languages:
   default: en

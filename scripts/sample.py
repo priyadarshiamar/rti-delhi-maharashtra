@@ -160,7 +160,10 @@ def main():
             "block": r["Block"], "portal": r["Website"],
             "portal_value_id": r["portal_value_id"],
             "treatment": r["treatment"], "assigned_ra": r["assigned_ra"],
-            "template_version": "v3", "language": "en", "channel": "portal",
+            # Maharashtra's portal caps the request text at 150 words, so MH
+            # rows use the condensed v4_mh150 letters; Delhi keeps v3
+            "template_version": "v4_mh150" if r["State"] == "Maharashtra" else "v3",
+            "language": "en", "channel": "portal",
         })
         return base
 
@@ -185,7 +188,13 @@ def main():
         "frame_csv": str(FRAME.relative_to(ROOT)), "frame_sha256": frame_sha,
         "frame_rows": len(rows),
         "source": "portal scrape 2026-09-07 via scripts/build_frame.py (see data/frame_provenance.json)",
-        "templates": {"plain": "plain_v3.txt", "legal_salience": "legal_salience_v3.txt"},
+        "templates": {
+            "Delhi": {"plain": "plain_v3.txt",
+                      "legal_salience": "legal_salience_v3.txt"},
+            "Maharashtra": {"plain": "plain_v4_mh150.txt",
+                            "legal_salience": "legal_salience_v4_mh150.txt",
+                            "note": "portal caps request text at 150 words"},
+        },
     }
     with open(OUT / "batch_meta.json", "w", encoding="utf-8") as f:
         json.dump(meta, f, indent=2)
