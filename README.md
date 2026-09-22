@@ -46,7 +46,7 @@ into OTHER — separately within each state. Within the draw:
 - **Instruments:** Delhi files the shared v3 letters. Maharashtra's portal
   caps the request text at **150 words**, so its rows carry
   `template_version: v4_mh150` — condensed letters (plain 123 words,
-  legal-salience 149) that keep every load-bearing element (register
+  legal-salience 149; ASCII punctuation only — the portal rejects semicolons and apostrophes, so clauses are comma-separated) that keep every load-bearing element (register
   extract with all recorded fields, period-totals fallback, s.25 return,
   no-new-compilation language, personal-details disclaimer, s.2(j)(iv)/7(9)
   electronic supply, s.6(3) transfer) and drop only the indicative
