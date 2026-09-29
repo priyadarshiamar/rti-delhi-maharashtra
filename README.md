@@ -59,6 +59,19 @@ into OTHER — separately within each state. Within the draw:
 Re-running `python3 scripts/sample.py` reproduces the batch byte-for-byte.
 A new wave means a new `batch_id` **and** a new seed.
 
+## Supplementary batch dm2026q3_02 (2026-09-29)
+
+Batch `dm2026q3_02`, seed `20260930`, doubles each state's rate to
+**20%**: +22 Delhi (DL-023…DL-044, 15 plain / 7 legal) and +33
+Maharashtra (MH-034…MH-066, 23 plain / 10 legal, v4_mh150 letters).
+Drawn by `scripts/sample_supplement.py` from the same frozen frame,
+excluding wave-1 offices, with top-up allocation so each state's union
+matches proportional targets (union cap 30; the pooled OTHER stratum is
+uncapped). Rationale and the pre-stated rule:
+[docs/design_notes/2026-09-29_supplementary_batches.md](docs/design_notes/2026-09-29_supplementary_batches.md).
+The dashboard and worklists show both batches; analyses should include
+a batch indicator.
+
 ## What RAs do
 
 1. Open the dashboard, download your worklist
