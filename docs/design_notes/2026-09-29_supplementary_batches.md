@@ -31,3 +31,19 @@ to their committed versions.
 **Analysis implication.** Wave now varies within these states; analyses
 pool waves with a batch indicator (or batch fixed effects). Cross-state
 comparisons remain confounded with portal, as they always were.
+
+---
+
+## Addendum 2026-10-04: Maharashtra instrument v5_mh150
+
+Offices phoned RAs asking which internal division the request targets
+(e.g. Police Commissioner Office, Navi Mumbai: "which specific division's
+information do you need, won't get it for all of Navi Mumbai"). v5 adds
+one scope sentence — "This request covers only the register of your own
+office, not subordinate divisions." — and, to stay inside the portal's
+150-word cap (plain 122 / legal 148), drops the Section 6(3) transfer
+request sentence and tightens phrasing. Wave-2 Maharashtra rows
+(MH-034...MH-066) carry template_version v5_mh150; wave-1 rows keep
+v4_mh150, the instrument they were actually filed with. Unfiled wave-1
+Maharashtra rows should also be filed with v5, with the version noted in
+the tracking sheet. Analyses treat template_version as filed, by row.

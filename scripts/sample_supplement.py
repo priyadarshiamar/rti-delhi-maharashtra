@@ -32,7 +32,7 @@ DESIGN = {
     "Delhi":       {"prefix": "DL", "n_union": 44, "n_new": 22, "n_legal_new": 7,
                     "template_version": "v3", "id_start": 23},
     "Maharashtra": {"prefix": "MH", "n_union": 66, "n_new": 33, "n_legal_new": 10,
-                    "template_version": "v4_mh150", "id_start": 34},
+                    "template_version": "v5_mh150", "id_start": 34},
 }
 
 ROOT = Path(__file__).resolve().parent.parent
