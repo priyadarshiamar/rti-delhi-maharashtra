@@ -47,3 +47,10 @@ request sentence and tightens phrasing. Wave-2 Maharashtra rows
 v4_mh150, the instrument they were actually filed with. Unfiled wave-1
 Maharashtra rows should also be filed with v5, with the version noted in
 the tracking sheet. Analyses treat template_version as filed, by row.
+
+**Same-day revision to v6_mh150 (2026-10-04).** v5 was superseded within
+hours, before any filing used it. v6 replaces the bare exclusion with a
+fallback: "This request covers your own office register only. If none is
+maintained, kindly provide the registers of your subordinate divisions."
+(plain 121 / legal 147 words). Wave-2 Maharashtra rows carry v6_mh150;
+v5 files remain in the repository for the record.
